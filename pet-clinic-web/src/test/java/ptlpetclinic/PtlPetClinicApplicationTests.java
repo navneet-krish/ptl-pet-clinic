@@ -1,4 +1,4 @@
-package com.babu.ptl.ptlpetclinic;
+package ptlpetclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
