@@ -52,7 +52,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/navneet-krish/ptl-pet-clinic.git</developerConnection>
-      <tag>ptl-pet-clinic-0.0.1</tag>
-  </scm>
+    </scm>
 
 </project>
