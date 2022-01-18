@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.babu.ptl</groupId>
     <artifactId>ptl-pet-clinic</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>ptl-pet-clinic</name>
     <description>ptl-pet-clinic</description>
     <properties>
@@ -52,6 +52,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/navneet-krish/ptl-pet-clinic.git</developerConnection>
-    </scm>
+  </scm>
 
 </project>
