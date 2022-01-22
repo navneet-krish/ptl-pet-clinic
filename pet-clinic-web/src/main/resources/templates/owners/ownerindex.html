@@ -5,7 +5,25 @@
     <title>List Of Owners</title>
 </head>
 <body>
+<!--/*@thymesVar id = "owner" type="com.babu.ptl.ptlpetclinic.model.Owner"*/-->
     <h1 th:text="'List Of Owners...'">List of Owners..</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>first name</th>
+            <th> last name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="owner : ${owners}">
+            <td th:text="${owner.id}">1</td>
+            <td th:text="${owner.firstName}">Nav</td>
+            <td th:text="${owner.lastName}">Sh</td>
+        </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
