@@ -2,10 +2,11 @@ package com.babu.ptl.ptlpetclinic.services.map;
 
 import com.babu.ptl.ptlpetclinic.model.Vet;
 import com.babu.ptl.ptlpetclinic.services.CrudService;
+import com.babu.ptl.ptlpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
