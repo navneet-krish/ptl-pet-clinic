@@ -1,6 +1,8 @@
 package com.babu.ptl.ptlpetclinic.model;
 
-public class BaseEntity {
+import java.io.Serializable;
+
+public class BaseEntity implements Serializable {
 
     private Long id;
 
