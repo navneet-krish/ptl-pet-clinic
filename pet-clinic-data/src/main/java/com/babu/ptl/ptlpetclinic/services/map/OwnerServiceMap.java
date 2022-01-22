@@ -1,11 +1,12 @@
 package com.babu.ptl.ptlpetclinic.services.map;
 
 import com.babu.ptl.ptlpetclinic.model.Owner;
-import com.babu.ptl.ptlpetclinic.services.CrudService;
 import com.babu.ptl.ptlpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override

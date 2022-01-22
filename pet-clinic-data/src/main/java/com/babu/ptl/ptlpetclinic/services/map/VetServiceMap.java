@@ -1,11 +1,12 @@
 package com.babu.ptl.ptlpetclinic.services.map;
 
 import com.babu.ptl.ptlpetclinic.model.Vet;
-import com.babu.ptl.ptlpetclinic.services.CrudService;
 import com.babu.ptl.ptlpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
