@@ -1,6 +1,7 @@
 package com.babu.ptl.ptlpetclinic.bootstrap;
 
 import com.babu.ptl.ptlpetclinic.model.Owner;
+import com.babu.ptl.ptlpetclinic.model.Pet;
 import com.babu.ptl.ptlpetclinic.model.PetType;
 import com.babu.ptl.ptlpetclinic.model.Vet;
 import com.babu.ptl.ptlpetclinic.services.OwnerService;
@@ -10,6 +11,8 @@ import com.babu.ptl.ptlpetclinic.services.map.OwnerServiceMap;
 import com.babu.ptl.ptlpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 
 @Component
@@ -39,12 +42,31 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Navneet");
         owner1.setLastName("Sharma");
+        owner1.setAddress("Bangalore");
+        owner1.setCity("Bangalore");
+        owner1.setTelephone("123456789");
 
+        Pet navPet = new Pet();
+        navPet.setPetType(savedDogPetType);
+        navPet.setOwner(owner1);
+        navPet.setBirthDate(LocalDate.now());
+        navPet.setName("Jimmy");
+        owner1.getPets().add(navPet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Tamneet");
         owner2.setLastName("Sharma");
+        owner2.setAddress("Greater Noida");
+        owner2.setCity("Noida");
+        owner2.setTelephone("123456789");
+
+        Pet tamPet = new Pet();
+        tamPet.setPetType(savedCatPetType);
+        tamPet.setOwner(owner2);
+        tamPet.setBirthDate(LocalDate.now());
+        tamPet.setName("Meow");
+        owner2.getPets().add(tamPet);
 
         ownerService.save(owner2);
 
