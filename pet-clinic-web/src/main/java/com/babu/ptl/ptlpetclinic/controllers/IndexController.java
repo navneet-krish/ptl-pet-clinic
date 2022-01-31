@@ -12,7 +12,7 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/oups")
+    @RequestMapping("/oops")
     public String findOwner(){
         return "notimplemented";
     }
