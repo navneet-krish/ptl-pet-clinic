@@ -1,10 +1,7 @@
 package com.babu.ptl.ptlpetclinic.bootstrap;
 
 import com.babu.ptl.ptlpetclinic.model.*;
-import com.babu.ptl.ptlpetclinic.services.OwnerService;
-import com.babu.ptl.ptlpetclinic.services.PetTypeService;
-import com.babu.ptl.ptlpetclinic.services.SpecialityService;
-import com.babu.ptl.ptlpetclinic.services.VetService;
+import com.babu.ptl.ptlpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,13 +15,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-                      SpecialityService specialityService) {
+                      SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -90,6 +89,13 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner2);
 
         System.out.println("Owners Loaded....");
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(tamPet);
+        catVisit.setLocalDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Cat");
+
+        visitService.save(catVisit);
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Joe");
