@@ -44,7 +44,7 @@ public class OwnerController {
         return "owners/findOwners";
     }
 
-    @GetMapping("/owners")
+    @GetMapping
     public String processFindForm (Owner owner, BindingResult result, Model model){
 
         if(owner.getLastName() == null) {

@@ -82,7 +82,7 @@ class OwnerControllerTest {
         when(ownerService.findAllByLastNameLike(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().lastName("NSharma").build(), Owner.builder().lastName("TSharma").build()));
 
-        mockMvc.perform(get("/owners/owners"))
+        mockMvc.perform(get("/owners"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/ownerList"))
                 .andExpect(model().attribute("selections",hasSize(2)));
@@ -93,7 +93,7 @@ class OwnerControllerTest {
         when(ownerService.findAllByLastNameLike(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
 
-        mockMvc.perform(get("/owners/owners"))
+        mockMvc.perform(get("/owners"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:owners/1"))
                 ;
